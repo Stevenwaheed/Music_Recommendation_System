@@ -1,12 +1,6 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import matplotlib
-
-matplotlib.use("Agg")
-
-matplotlib.use("Agg")
-
 
 class Spotify_Recommendation():
     def __init__(self, dataset):
