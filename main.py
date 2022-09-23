@@ -75,22 +75,21 @@ def main():
     if st.button("Search"):
         try:
             amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
+            try:
+                st.write('- Search results:')
+                search = Spotify_Recommendation(df)
+                search_songs = search.search(title, amount)
+                st.write(search_songs)
 
-                try:
-                    st.write('- Search results:')
-                    search = Spotify_Recommendation(df)
-                    search_songs = search.search(title, amount)
-                    st.write(search_songs)
-
-                    st.write('--------------------------------------------')
-                    st.write('- Recommended for you:')
-                    st.write('These songs have small difference in danceability, energy, loudness,mode, speechiness, '
-                             'acousticness, instrumentalness, liveness, valence and tempo.')
-                    recomendations = Spotify_Recommendation(df)
-                    recommended_songs = recomendations.recommend(title, amount)
-                    st.write(recommended_songs)
-                except Exception as e:
-                    st.write("Something goes wrong..")
+                st.write('--------------------------------------------')
+                st.write('- Recommended for you:')
+                st.write('These songs have small difference in danceability, energy, loudness,mode, speechiness, '
+                         'acousticness, instrumentalness, liveness, valence and tempo.')
+                recomendations = Spotify_Recommendation(df)
+                recommended_songs = recomendations.recommend(title, amount)
+                st.write(recommended_songs)
+            except Exception as e:
+                st.write("Something goes wrong..")
 
         except:
             st.write()
