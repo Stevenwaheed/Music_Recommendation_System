@@ -32,23 +32,20 @@ Music Recommendation System likes Spotify, it's use a large dataset of playlist 
 - Using Machine learning libs specifically sklearn, Pandas.
 
 
-## Streamlit webpage: https://stevenwaheed-music-recommendation-system-main-7eow46.streamlitapp.com/
+### Streamlit webpage: https://stevenwaheed-music-recommendation-system-main-7eow46.streamlitapp.com/
 
 
 # In dataset that we used:
 
 ## Top 50 tracks
--------------------------------------
 ![download](https://user-images.githubusercontent.com/83607748/190687547-8e5647da-c698-429f-93e1-d1dfd61c7289.png)
 
 
 ## Top 50 artists
--------------------------------------
 ![download](https://user-images.githubusercontent.com/83607748/190687700-5c664d9c-1ed9-434f-a101-a30d3f85f854.png)
 
 
 ## Top 50 albums
--------------------------------------
 ![download](https://user-images.githubusercontent.com/83607748/190687777-9a1c2911-db87-4d3f-917e-8e4bfd1da328.png)
 
 
