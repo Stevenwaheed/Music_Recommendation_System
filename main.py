@@ -18,7 +18,7 @@ class Spotify_Recommendation():
         song = song.drop_duplicates()
         return song[:amount]
 
-    def recommend(self, user_songs, amount=1):
+    def recommend(self, user_songs, amount=5):
         distance = []
         try:
 
@@ -72,27 +72,28 @@ df = pd.read_csv('final df.csv')
 
 def main():
     title = st.text_input("- Enter the song title here...").lower()
-    try:
-        amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
-        if st.button("Search"):
-            try:
-                st.write('- Search results:')
-                search = Spotify_Recommendation(df)
-                search_songs = search.search(title, amount)
-                st.write(search_songs)
+    if st.button("Search"):
+        try:
+            amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
 
-                st.write('--------------------------------------------')
-                st.write('- Recommended for you:')
-                st.write('These songs have small difference in danceability, energy, loudness,mode, speechiness, '
-                         'acousticness, instrumentalness, liveness, valence and tempo.')
-                recomendations = Spotify_Recommendation(df)
-                recommended_songs = recomendations.recommend(title, amount)
-                st.write(recommended_songs)
-            except Exception as e:
-                st.write("Something goes wrong..")
+                try:
+                    st.write('- Search results:')
+                    search = Spotify_Recommendation(df)
+                    search_songs = search.search(title, amount)
+                    st.write(search_songs)
 
-    except:
-        st.write()
+                    st.write('--------------------------------------------')
+                    st.write('- Recommended for you:')
+                    st.write('These songs have small difference in danceability, energy, loudness,mode, speechiness, '
+                             'acousticness, instrumentalness, liveness, valence and tempo.')
+                    recomendations = Spotify_Recommendation(df)
+                    recommended_songs = recomendations.recommend(title, amount)
+                    st.write(recommended_songs)
+                except Exception as e:
+                    st.write("Something goes wrong..")
+
+        except:
+            st.write()
 
 
 if __name__ == '__main__':
