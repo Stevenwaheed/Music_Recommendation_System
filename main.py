@@ -25,7 +25,7 @@ class Spotify_Recommendation():
             # Take the identitcal songs
             same_tracks_lst = []
             for track in df.track_name.str.lower():
-                same_tracks_lst.append(user_songs.lower() == track)
+                same_tracks_lst.append(((user_songs.lower() == track) or (user_songs.lower() in track)))
 
             song = self.dataset[same_tracks_lst].head(1).values[0]
 
