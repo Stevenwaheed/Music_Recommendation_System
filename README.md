@@ -35,9 +35,7 @@ Music Recommendation System likes Spotify, it's use a large dataset of playlist 
 
 ### Streamlit webpage video: 
 
-https://user-images.githubusercontent.com/83607748/191943581-6d748755-4aab-4374-931a-75031c26982c.mp4
-
-
+https://user-images.githubusercontent.com/83607748/191957856-225b2e7c-e8fe-4c0b-907d-a867969e7986.mp4
 
 
 
