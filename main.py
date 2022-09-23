@@ -72,9 +72,10 @@ df = pd.read_csv('final df.csv')
 
 def main():
     title = st.text_input("- Enter the song title here...").lower()
-    if st.button("Search"):
-        try:
-            amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
+    
+    try:
+        amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
+        if st.button("Search"):
             try:
                 st.write('- Search results:')
                 search = Spotify_Recommendation(df)
@@ -91,8 +92,8 @@ def main():
             except Exception as e:
                 st.write("Something goes wrong..")
 
-        except:
-            st.write()
+    except:
+        st.write()
 
 
 if __name__ == '__main__':
