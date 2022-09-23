@@ -71,23 +71,28 @@ df = pd.read_csv('final df.csv')
 
 
 def main():
-    title = st.text_input("Enter the song title here...").lower()
+   title = st.text_input("- Enter the movie title here...").lower()
+    try:
+        amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
+        if st.button("Search"):
+            try:
+                st.write('- Search results:')
+                search = Spotify_Recommendation(df)
+                search_songs = search.search(title, amount)
+                st.write(search_songs)
 
-    if st.button("Search"):
-        try:
-            st.write('- Search results:')
-            recomendations = Spotify_Recommendation(df)
-            search_songs = recomendations.search(title, 10)
-            st.write(search_songs)
+                st.write('--------------------------------------------')
+                st.write('- Recommended for you:')
+                st.write('These songs have small difference in danceability, energy, loudness,mode, speechiness, '
+                         'acousticness, instrumentalness, liveness, valence and tempo.')
+                recomendations = Spotify_Recommendation(df)
+                recommended_songs = recomendations.recommend(title, amount)
+                st.write(recommended_songs)
+            except Exception as e:
+                st.write("Something goes wrong..")
 
-            st.write('--------------------------------------------')
-            st.write('- Recommended for you')
-            st.write('These songs have small difference in danceability ,energy ,loudness,mode ,speechiness ,'
-                     'acousticness ,instrumentalness, liveness, valence and tempo')
-            recommended_songs = recomendations.recommend(title, 10)
-            st.write(recommended_songs)
-        except Exception as e:
-            st.write("Something goes wrong..")
+    except:
+        st.write()
 
 
 if __name__ == '__main__':
