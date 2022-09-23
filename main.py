@@ -71,7 +71,7 @@ df = pd.read_csv('final df.csv')
 
 
 def main():
-    title = st.text_input("Enter the movie title here...").lower()
+    title = st.text_input("Enter the song title here...").lower()
 
     if st.button("Search"):
         try:
