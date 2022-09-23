@@ -71,7 +71,7 @@ df = pd.read_csv('final df.csv')
 
 
 def main():
-   title = st.text_input("- Enter the movie title here...").lower()
+    title = st.text_input("- Enter the movie title here...").lower()
     try:
         amount = int(st.text_input("- How many recommendations do you want (Enter an integer number): "))
         if st.button("Search"):
