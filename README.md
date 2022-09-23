@@ -23,7 +23,6 @@ Music Recommendation System likes Spotify, it's use a large dataset of playlist 
 
 10- tempo.
 
-----------------------------------------------------------------------------------------
 ## Description.
 - This system use spotify links to extract songs using spotify API, it also use K-Means Model to cluster the songs, and simple neural collaborative filtering to learn from the properties of users songs and recommend songs that have similar properties. 
 
