@@ -31,7 +31,7 @@ pip install -r requirements.txt
 <p>3. tart running of streamlit website using below command</p>
 
 ```
-streamlit run Deployment.py
+streamlit run main.py
 ```
 
   
